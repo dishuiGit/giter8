@@ -4,17 +4,64 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>$group_id$</groupId>
-        <artifactId>$name$</artifactId>
+        <artifactId>spark-parent</artifactId>
         <version>$version$</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
     <name>common</name>
+    <modelVersion>4.0.0</modelVersion>
     <artifactId>common</artifactId>
     <version>$version$</version>
 
+    <repositories>
+        <repository>
+            <id>justwrote</id>
+            <url>http://repo.justwrote.it/releases/</url>
+        </repository>
+    </repositories>
+
     <properties>
+        <protobuf.version>3.4.0</protobuf.version>
+        <gson.version>2.7</gson.version>
+        <guava.version>19.0</guava.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>\${protobuf.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java-util</artifactId>
+            <version>\${protobuf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jep</groupId>
+            <artifactId>jep</artifactId>
+            <version>3.7.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-native_\${scala.binary.version}</artifactId>
+            <version>3.5.3</version>
+        </dependency>
+
+        <!--test-->
+        <dependency>
+            <groupId>org.scalactic</groupId>
+            <artifactId>scalactic_\${scala.binary.version}</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_\${scala.binary.version}</artifactId>
+            <version>3.0.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>

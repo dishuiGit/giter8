@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>$group_id$</groupId>
-        <artifactId>$name$</artifactId>
+        <artifactId>spark-parent</artifactId>
         <version>$version$</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -39,7 +39,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-streaming-kafka-0-10_${scala.binary.version}</artifactId>
+            <artifactId>spark-streaming-kafka-0-10_\${scala.binary.version}</artifactId>
             <version>\${spark.version}</version>
             <scope>provided</scope>
         </dependency>

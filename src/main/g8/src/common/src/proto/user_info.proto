@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+option java_package = "io.dishui.common.protobuf";
+option java_outer_classname = "User";
+
+message UserInfo {
+    required int32 id = 1;
+    required string name = 2;
+    required string phone_number = 3;
+    required string address = 4;
+    required string email = 5;
+    required string ipv4 = 6;
+    required string str = 7;
+}

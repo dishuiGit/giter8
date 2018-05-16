@@ -4,12 +4,12 @@
 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>$group_id$</groupId>
-    <artifactId>$spark-parent$</artifactId>
+    <artifactId>spark-parent</artifactId>
     <packaging>pom</packaging>
-    <name>$spark-parent$</name>
+    <name>spark-parent</name>
     <version>$version$</version>
     <properties>
-        <spark.version>2.3.0</spark.version>
+        <spark.version>$spark_version$</spark.version>
         <fastjson.version>1.2.14</fastjson.version>
         <scala.version>2.11.8</scala.version>
         <scala.binary.version>2.11</scala.binary.version>
