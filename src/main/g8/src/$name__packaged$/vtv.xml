@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamining id="vtv" name="volte专题" type="spark1" driver="REQUIRED">
+	<title>volte_VTV专题</title>
+	<description>volte_VTV专题</description>
+	<database id="spark1" type="XDR-CMCC-SPARK" name="HADOOP Env 1" runtime="true" />
+    <database id="hive" type="HIVE" name="hive结果库"/>
+    <database id="hdfs" type="HDFS" name="hdfs结果"/>
+	<window by="HOURLY" />
+	<prepare type="class">com.nsn.datamining.support.xdr.cmcc.cmdi.broadcast.ConfigBroadcaster</prepare>
+	<source id="VTV" database="spark1" cache="false">
+		<arg name="tables">vtv_factory</arg>
+		<body><![CDATA[
+			SELECT * FROM vtv_factory f
+		]]></body>
+	</source>
+	<summary id="F_V_BXDR_VTV_ALL_H_SUMMARY" in="VTV">
+		<body><![CDATA[
+			 select * from vtv
+        ]]></body>
+	</summary>
+	<result id="F_V_BXDR_VTV_ALL_H" for="F_V_BXDR_VTV_ALL_H_SUMMARY" to="hive" title="spark1"/>
+    <!--
+        <post id="hdfsClean" type="cleaner">com.nsn.doo.tbox.cmcc.spark.moniluce3.post.CleanPost</post>
+        <post id="oracleInvoker" type="cleaner">com.nsn.doo.tbox.cmcc.spark.moniluce3.post.InvokeOraclePost</post>
+    -->
+</datamining>
